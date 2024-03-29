@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navigation Menu</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #5b86e5, #36d1dc);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 10px 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .navbar li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  .navbar a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+  }
+  .navbar a:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 3px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+  }
+  .navbar a:hover:before, .navbar a.active:before {
+    width: 100%;
+  }
+  .navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+  .section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  .section h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .section p {
+    color: #666;
+  }
+</style>
+</head>
+<body>
+<div class="navbar" id="navbar">
+  <ul>
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
+
+<div class="section" id="home">
+  <h2>Welcome to Prodigy Infotech</h2>
+  <p>We specialize in crafting beautiful and responsive web solutions.</p>
+</div>
+
+<div class="section" id="features" style="background-color: #fff;">
+  <h2>Features</h2>
+  <p>Here are some of the features we offer:</p>
+  <ul>
+    <li>Responsive design</li>
+    <li>User-friendly interface</li>
+    <li>SEO optimization</li>
+    <li>Customizable templates</li>
+  </ul>
+</div>
+
+<div class="section" id="testimonials">
+  <h2>Testimonials</h2>
+  <p>See what our clients have to say:</p>
+  <blockquote>
+    "Prodigy Infotech exceeded our expectations with their expertise and professionalism."<br>
+    - Sheetal Payal, CEO of Excellence Company
+  </blockquote>
+</div>
+
+<div class="section" id="contact" style="background-color: #fff;">
+  <h2>Contact Us</h2>
+  <p>Get in touch with us today!</p>
+  <form>
+    <input type="text" placeholder="Your Name"><br>
+    <input type="email" placeholder="Your Email"><br>
+    <textarea placeholder="Your Message"></textarea><br>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+<script>
+  window.addEventListener('scroll', function() {
+    var navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.style.backgroundColor = 'rgba(75, 119, 190, 0.9)';
+    } else {
+      navbar.style.backgroundColor = 'rgba(75, 119, 190, 1)';
+    }
+  });
+</script>
+
+</body>
+</html>
